@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Notes</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Smart Notes</h1>
+        <p>Корпоративные заметки</p>
+    </header>
+
+    <section class="controls">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Поиск заметок..."
+        >
+
+        <button onclick="openForm()">
+            Новая заметка
+        </button>
+
+        <button onclick="exportNotes()">
+            Экспорт
+        </button>
+        <button onclick="exportHtmlReport()">
+            Экспорт HTML
+        </button>
+
+        <input
+            type="file"
+            id="importFile"
+            onchange="importNotes(event)"
+        >
+
+    </section>
+
+    <section class="notes" id="notesContainer">
+
+    </section>
+
+</div>
+
+<div class="modal hidden" id="modal">
+
+    <div class="modal-content">
+
+        <h2>Заметка</h2>
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Заголовок"
+        >
+
+        <input
+            type="date"
+            id="date"
+        >
+
+        <input
+            type="time"
+            id="time"
+        >
+
+        <textarea
+            id="content"
+            placeholder="Текст заметки"
+        ></textarea>
+
+        <button onclick="saveNote()">
+            Сохранить
+        </button>
+
+        <button onclick="closeForm()">
+            Закрыть
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script
+
+</body>
+</html>
